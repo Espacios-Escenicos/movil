@@ -1,15 +1,21 @@
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+class CounterScreen extends StatefulWidget {
+  const CounterScreen({Key? key}) : super(key: key);
+
+  @override
+  State<CounterScreen> createState() => _CounterScreenState();
+}
+
+class _CounterScreenState extends State<CounterScreen> {
+  int counter = 10;
   @override
   Widget build(BuildContext context) {
     const fontsize30 = TextStyle(fontSize: 35);
-    int counter = 10;
 
     return Scaffold(
       appBar: AppBar(
-        title: const Center(child: Text('Hola')),
+        title: const Center(child: Text('Counter screen')),
         elevation: 1.0,
       ),
       backgroundColor: Colors.blueGrey,
@@ -34,7 +40,7 @@ class HomeScreen extends StatelessWidget {
         child: const Icon(Icons.add),
         onPressed: (() {
           counter++;
-          print(counter);
+          setState(() {});
         }),
       ),
     );
